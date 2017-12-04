@@ -1,0 +1,10 @@
+version: 1.0.{build}
+configuration: Release
+platform: x64
+before_build:
+- cmd: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv" "VisualStudio\vlmcsd.sln" /upgrade'
+build:
+  project: VisualStudio\vlmcsd.sln
+  verbosity: minimal
+after_build:
+- cmd: tree /f
